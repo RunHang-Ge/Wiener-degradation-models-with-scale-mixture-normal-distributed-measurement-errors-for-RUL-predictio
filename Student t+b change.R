@@ -1,15 +1,15 @@
-#### ÎÒÃÇ¼ÙÉèÊ±¼äÎª100£¬½Úµã¶¼ÊÇÕûÊı£¬Ê±¼ä³ß¶È=t ####
-#### ÎÒÃÇ°´¦Ë=seq£¨1£¬100£©½øĞĞ·ÂÕæ ####
+#### æˆ‘ä»¬å‡è®¾æ—¶é—´ä¸º100ï¼ŒèŠ‚ç‚¹éƒ½æ˜¯æ•´æ•°ï¼Œæ—¶é—´å°ºåº¦=t ####
+#### æˆ‘ä»¬æŒ‰Î»=seqï¼ˆ1ï¼Œ100ï¼‰è¿›è¡Œä»¿çœŸ ####
 library(Runuran)
 library(MASS)
-library(PearsonDS) #Õâ¸ö°üÖĞType VIIµÄ±í´ïÊ½ÓĞÎÊÌâ£¬µ«³ÌĞòÃ»ÎÊÌâ
+library(PearsonDS) #è¿™ä¸ªåŒ…ä¸­Type VIIçš„è¡¨è¾¾å¼æœ‰é—®é¢˜ï¼Œä½†ç¨‹åºæ²¡é—®é¢˜
 library(readxl)
 library(pracma)
 library(ggplot2)
 library(ggpubr)
 
 
-########################### Êı¾İ´¦Àí #################################
+########################### æ•°æ®å¤„ç† #################################
 #degradation_06 = Battery_06-rep(Battery_06[1],length(Battery_06))
 #plot(seq(1,168),-degradation_06,type= 'l')
 #points(seq(1,168),-degradation_06,pch=16,cex=0.5)
@@ -44,24 +44,24 @@ library(ggpubr)
 #lines(seq(1,168),0.005*seq(1,168))
 
 
-################### t·Ö²¼ ####################
-#t_function = function(para){
-  ### Éú³É³õÊ¼²ÎÊı
-  beta = -7#Éú³É³õÊ¼½×¶Î
-  miu=0.1 #Éú³É¦Ì
-  m=0.1 #Éú³Ém
-  sigma=0.1 #Éú³É¦Ò
-  v=2 #Éú³Év
-  z = 2 #EMµü´ú¼ÆÊı
-  b = c(0.5,0.01,2) #Ê±¼ä³ß¶È²ÎÊı
-  N = 125 #×Ü·ÂÕæ¸öÊı
-  max_iter = 4000 #×î¶àµü´ú´ÎÊı
+################### tåˆ†å¸ƒ ####################
+t_function = function(para){
+  ### ç”Ÿæˆåˆå§‹å‚æ•°
+  beta = -7#ç”Ÿæˆåˆå§‹é˜¶æ®µ
+  miu=0.1 #ç”ŸæˆÎ¼
+  m=0.1 #ç”Ÿæˆm
+  sigma=0.1 #ç”ŸæˆÏƒ
+  v=2 #ç”Ÿæˆv
+  z = 2 #EMè¿­ä»£è®¡æ•°
+  b = c(0.5,0.01,2) #æ—¶é—´å°ºåº¦å‚æ•°
+  N = 125 #æ€»ä»¿çœŸä¸ªæ•°
+  max_iter = 4000 #æœ€å¤šè¿­ä»£æ¬¡æ•°
   p=1
   weight = rbinom(N,1,p)
-  #t=seq(2,2*N,2)^b #Éú³É³õÊ¼Ê±¼äµã
+  #t=seq(2,2*N,2)^b #ç”Ÿæˆåˆå§‹æ—¶é—´ç‚¹
   t=b[1]*exp(b[2]*seq(2,2*N,2))+b[3]
   
-  ### Éú³É·ÂÕæĞòÁĞ
+  ### ç”Ÿæˆä»¿çœŸåºåˆ—
   delta_x = rep(NA,N)
   for (i in 1:N){ 
     if (i == 1){
@@ -71,9 +71,9 @@ library(ggpubr)
     }
   }
   x = cumsum(delta_x)+beta
-  #Y = matrix(x+weight*rpearsonVII(n=N,df=v,location=0,scale=sigma)+(rep(1,N)-weight)*rnorm(n=N,mean=0,sd=sigma),nrow = 1,ncol = N)
+  Y = matrix(x+weight*rpearsonVII(n=N,df=v,location=0,scale=sigma)+(rep(1,N)-weight)*rnorm(n=N,mean=0,sd=sigma),nrow = 1,ncol = N)
   
-  ### ÒıÈëÊµ¼ÊÊı¾İ
+  ### å¼•å…¥å®é™…æ•°æ®
   #Y = -t(degradation_06)
   #Y = t(Bearing_data3)
   #Y = t(HDD_data)
@@ -84,7 +84,7 @@ library(ggpubr)
   
   
   
-  ### ¼ÓÈëËæ»úÎó²î
+  ### åŠ å…¥éšæœºè¯¯å·®
   #outlier = round(runif(10,min=1,max=200))
   #outlier = seq(100,110)
   #Y[outlier] = Y[outlier]+seq(20,120,10)
@@ -105,11 +105,11 @@ library(ggpubr)
   #change = sqrt(max((history_miu[z]-history_miu[z-1])^2,(history_sigma[z]-history_sigma[z-1])^2,(history_m[z]-history_m[z-1]))^2)
   
   
-  ### Éú³É³õÊ¼¶àÔª¸ßË¹
-  q0_lambda_expect = 1 #rgamma(1,shape = (v+1)/2,scale = 2/(v+1))µÄÆÚÍû
-  D0 = diag(rep(1/q0_lambda_expect,N)) #Éú³É¶Ô½ÇÕóD
+  ### ç”Ÿæˆåˆå§‹å¤šå…ƒé«˜æ–¯
+  q0_lambda_expect = 1 #rgamma(1,shape = (v+1)/2,scale = 2/(v+1))çš„æœŸæœ›
+  D0 = diag(rep(1/q0_lambda_expect,N)) #ç”Ÿæˆå¯¹è§’é˜µD
   P = matrix(data = NA,ncol=N,nrow=N)
-  for (i in 1:N){ #Éú³É¾ØÕóP0
+  for (i in 1:N){ #ç”ŸæˆçŸ©é˜µP0
     for (j in 1:N){
       if (i<j){
         P[i,j]=b[1]*exp(b[2]*2*i)+b[3]
@@ -120,32 +120,32 @@ library(ggpubr)
     }
   }
   #diag(diag(solve(D0))/(sigma^2))
-  multi_var = solve(solve(D0)/rep((sigma^2),N)+(solve(P)/(m^2))) #¼ÆËã¶àÔª¸ßË¹·½²î¾ØÕó
-  multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D0)/rep((sigma^2),N))%*%multi_var #¼ÆËã¶àÔª¸ßË¹¾ùÖµ
-  history_gamma_beta = matrix(data = 0, ncol = max_iter, nrow = N) #´æ·ÅÀúÊ·gammaµÄ¦Â
-  history_multi_para = matrix(data = 0, ncol = max_iter, nrow = N) #´æ·ÅÀúÊ·¶àÔª¸ßË¹ÏµÊı
+  multi_var = solve(solve(D0)/rep((sigma^2),N)+(solve(P)/(m^2))) #è®¡ç®—å¤šå…ƒé«˜æ–¯æ–¹å·®çŸ©é˜µ
+  multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D0)/rep((sigma^2),N))%*%multi_var #è®¡ç®—å¤šå…ƒé«˜æ–¯å‡å€¼
+  history_gamma_beta = matrix(data = 0, ncol = max_iter, nrow = N) #å­˜æ”¾å†å²gammaçš„Î²
+  history_multi_para = matrix(data = 0, ncol = max_iter, nrow = N) #å­˜æ”¾å†å²å¤šå…ƒé«˜æ–¯ç³»æ•°
   history_gamma_beta[,1] = rep((v+1)/2,N)
   history_multi_para[,1] = t(multi_miu)
   
-  ### ¼ÆËã³õÊ¼ÍêÕûËÆÈ»
-  ### ¼ÆËãE(In¦Ëi)
+  ### è®¡ç®—åˆå§‹å®Œæ•´ä¼¼ç„¶
+  ### è®¡ç®—E(InÎ»i)
   log_expect = sum(digamma((v+1)/2)-log((v+1)/2)) 
   
-  ### ¼ÆËãE[(¦¤x-¦Ì¦¤)^2]
+  ### è®¡ç®—E[(Î”x-Î¼Î”)^2]
   temp_three = sum(((multi_miu-c(beta,multi_miu[1:(N-1)]))-miu*(t-c(0,t[1:(N-1)])))^2/(t-c(0,t[1:(N-1)])))+sum(diag(multi_var%*%solve(P)))
  
-  ### Éú³ÉE(¦Å^2¦Ë)
+  ### ç”ŸæˆE(Îµ^2Î»)
   temp_four = matrix(data=rep(1,N),nrow=1)%*%(t(Y^2)-2*diag(as.vector(Y))%*%t(multi_miu)+diag(multi_var)+t(multi_miu)^2)
   
   complete_likelihood = -(N/2)*log(2*pi*m^2)-1/2*sum(log(t-c(0,t[1:(N-1)])))-(1/(2*m^2))*temp_three-0.5*N*log(2*pi*sigma^2)+((v+1)/2-1)*log_expect-(temp_four/(2*sigma^2))+(v*N/2)*log(v/2)-N*log(gamma(v/2))-(v/2)*N
   history_complete_likelihood = rep(0,max_iter)
   history_complete_likelihood[1] = complete_likelihood
   
-  ### ¼ÆËã³õÊ¼¶ÔÊıËÆÈ»
-  ### ¼ÆËã(E(¦Å^2)/2sigma^2+v/2)E[¦Ë]
+  ### è®¡ç®—åˆå§‹å¯¹æ•°ä¼¼ç„¶
+  ### è®¡ç®—(E(Îµ^2)/2sigma^2+v/2)E[Î»]
   temp_six = matrix(data=1,nrow=1,ncol=N)%*%((t(Y^2)-2*diag(as.vector(Y))%*%t(multi_miu)+diag(multi_var)+t(multi_miu)^2)/(2*rep(sigma^2,N))+rep(v/2,N))
   
-  ### ¼ÆËãdet(var)ËùĞèµÄ²ÎÊı
+  ### è®¡ç®—det(var)æ‰€éœ€çš„å‚æ•°
   if (b < 1){
     c = -1/N*sum(log(t-c(0,t[1:(N-1)])))
   }else if (b>1){
@@ -160,7 +160,7 @@ library(ggpubr)
   history_log_likelihood[1] = log_likelihood
   
   
-  
+  # æ ¸å¿ƒç®—æ³•å¾ªç¯
   while (z<=max_iter){
     if(max(abs(history_miu[z]-history_miu[z-1]),abs(history_sigma[z]-history_sigma[z-1])^2,abs(history_m[z]-history_m[z-1])^2,abs(history_v[z]-history_v[z-1])) < 1e-06){
     #if(max(abs(history_miu[z]-history_miu[z-1])/history_miu[z-1],abs(history_sigma[z]-history_sigma[z-1])^2/(history_sigma[z-1]^2),abs(history_m[z]-history_m[z-1])^2/(history_m[z-1]^2),abs(history_v[z]-history_v[z-1])/history_v[z-1])<=0.005){
@@ -180,7 +180,7 @@ library(ggpubr)
             break
           }
           k = k+1
-          ### New q(¦Ë|Y)
+          ### New q(Î»|Y)
           temp_one = 0
           for (i in 1:N){
             temp_one = Y[i]^2-2*Y[i]*multi_miu[i]+multi_miu[i]^2+multi_var[i,i]
@@ -210,26 +210,26 @@ library(ggpubr)
         miu = (multi_miu[N]-beta)/t[N]
         
         ### Update m
-        ### calcultae E[(¦¤x-¦Ì¦¤)^2]
+        ### calcultae E[(Î”x-Î¼Î”)^2]
         temp_three = sum(((multi_miu-c(beta,multi_miu[1:(N-1)]))-miu*(t-c(0,t[1:(N-1)])))^2/(t-c(0,t[1:(N-1)])))+sum(diag(multi_var%*%solve(P)))
         m = sqrt((1/N)*temp_three)
         #View(m^2)
         
-        ### Update ¦Ò
-        ### calculate E[¦Å^2¦Ë]
+        ### Update Ïƒ
+        ### calculate E[Îµ^2Î»]
         temp_four = (Y^2-2*Y%*%diag(array(multi_miu))+t(diag(multi_var))+multi_miu^2)%*%(gamma_para[,1]/gamma_para[,2])
         sigma = sqrt(temp_four/N)
         #View(sigma^2)
         
         
-        ### Ö±½Ó¸üĞÂv,·¢ÏÖÊ¹ÓÃÅ£¶Ù·¨µÄ½á¹ûÔÚ2-3´úÖ®ºóÓë¼ÓËÙEM»ù±¾ÏàÍ¬,³õÊ¼¼ä¸ô²»ÄÜÀëÁãµã¹ıÔ¶
+        ### ç›´æ¥æ›´æ–°v,å‘ç°ä½¿ç”¨ç‰›é¡¿æ³•çš„ç»“æœåœ¨2-3ä»£ä¹‹åä¸åŠ é€ŸEMåŸºæœ¬ç›¸åŒ,åˆå§‹é—´éš”ä¸èƒ½ç¦»é›¶ç‚¹è¿‡è¿œ
         #search_v = function(v_test){
         #log_expect_test = sum(rep(digamma((v_test+1)/2),100)-log(gamma_para[,2]))
         # return((100/2)*log(v_test/2)+50-(100/2)*digamma(v_test/2)+(1/2)*log_expect_test-(1/2)*sum(q_lambda_expect))
         # }
         # v_alter = uniroot(search_v,interval = c(1,2),extendInt="yes")$root
         
-        ### ³¢ÊÔÖ±½ÓÓÃfminsearch¶ø²»ÊÇÑ°ÕÒµ¼Êı0µã
+        ### å°è¯•ç›´æ¥ç”¨fminsearchè€Œä¸æ˜¯å¯»æ‰¾å¯¼æ•°0ç‚¹
         #log_expect_test = sum(rep(digamma((v+1)/2),100)-log(gamma_para[,2]))
        # search_v = function(v_test){
        #   return((N/2)*v_test*log(v_test/2)+(v_test/2-1)*log_expect_test-(v_test/2)*sum(q_lambda_expect))-N*log(gamma(v_test/2))
@@ -245,8 +245,8 @@ library(ggpubr)
         history_sigma[z] = sigma
       }
       else{
-        ##########  ±ä·Ö½×¶Î   ###########
-        k = 2 #VBAµü´ú¼ÆÊı
+        ##########  å˜åˆ†é˜¶æ®µ   ###########
+        k = 2 #VBAè¿­ä»£è®¡æ•°
         gamma_para = matrix(data=NA, ncol=2, nrow=N)
         while (k<=(max_iter-1)){
           cond_VB = max(abs(history_multi_para[,k]-history_multi_para[,k-1])/abs(history_multi_para[,k-1]))<1e-06
@@ -254,33 +254,33 @@ library(ggpubr)
             break
           }
           k = k+1
-          ### Éú³ÉĞÂµÄq(¦Ë|Y)
+          ### ç”Ÿæˆæ–°çš„q(Î»|Y)
           temp_one = 0
-          for (i in 1:N){ #Éú³Éq(¦Ë)¦ÁºÍ¦Â
+          for (i in 1:N){ #ç”Ÿæˆq(Î»)Î±å’ŒÎ²
             temp_one = Y[i]^2-2*Y[i]*multi_miu[i]+multi_miu[i]^2+multi_var[i,i]
             gamma_para[i,1] = (v+1)/2
             gamma_para[i,2] = (temp_one/(2*sigma^2))+v/2
           }
           history_gamma_beta[,k] = gamma_para[,2]
           
-          ### Éú³ÉĞÂµÄq(X|Y)
+          ### ç”Ÿæˆæ–°çš„q(X|Y)
           q_lambda_expect = gamma_para[,1]/gamma_para[,2]
           #View(q_lambda_expect)
           D = diag(1/q_lambda_expect)
-          multi_var = solve(solve(D)/rep((sigma^2),N)+(solve(P)/(m^2)))#¼ÆËã¶àÔª¸ßË¹·½²î¾ØÕó
-          multi_miu = t(rep(beta,N))+miu*t+(Y-miu*t-t(rep(beta,N)))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #¼ÆËã¶àÔª¸ßË¹¾ùÖµ
+          multi_var = solve(solve(D)/rep((sigma^2),N)+(solve(P)/(m^2)))#è®¡ç®—å¤šå…ƒé«˜æ–¯æ–¹å·®çŸ©é˜µ
+          multi_miu = t(rep(beta,N))+miu*t+(Y-miu*t-t(rep(beta,N)))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #è®¡ç®—å¤šå…ƒé«˜æ–¯å‡å€¼
           history_multi_para[,k] = t(multi_miu)
           #View(gamma_para)
           #View(history_gamma_beta)
         }
         
         
-        ##########  ¼ÓËÙEM½×¶Î   ###########
+        ##########  åŠ é€ŸEMé˜¶æ®µ   ###########
         a = 2
         iter_v = matrix(data=0,ncol = 100,nrow = 1)
         iter_v[1] = v
-        vL = 0.01 #ÉèÖÃvµÄÏÂ½ç
-        vU = 100 #ÉèÖÃvµÄÉÏ½ç
+        vL = 0.01 #è®¾ç½®vçš„ä¸‹ç•Œ
+        vU = 100 #è®¾ç½®vçš„ä¸Šç•Œ
         temp_five = (Y^2-2*Y%*%diag(array(multi_miu))+t(diag(multi_var))+multi_miu^2)/(rep(sigma^2,N))
         while(a<100 & abs(iter_v[a]-iter_v[a-1])>1e-06){
           a=a+1
@@ -292,34 +292,34 @@ library(ggpubr)
         }
         history_v[z] = v
         
-        ### ³¢ÊÔÖ±½ÓÓÃfminsearch¶ø²»ÊÇÑ°ÕÒµ¼Êı0µã
+        ### å°è¯•ç›´æ¥ç”¨fminsearchè€Œä¸æ˜¯å¯»æ‰¾å¯¼æ•°0ç‚¹
         #search_v = function(v_test){
           #return((N/2)*v_test*log(v_test/2)-N*log(gamma(v/2))+N*log(gamma((v+1)/2))-(v+1)/2*sum(log(temp_five/2+rep(v,N)/2)))
         #}
         #v_alter = optimize(search_v,interval = c(100,200),maximum = TRUE)$maximum
       }
-    } #1£º2µÄ½áÎ²
+    } #1ï¼š2çš„ç»“å°¾
     
     
-    ##########  ¼ÆËãÍêÕûËÆÈ»   ###########
-    ### ¼ÆËãE(In¦Ëi)
+    ##########  è®¡ç®—å®Œæ•´ä¼¼ç„¶   ###########
+    ### è®¡ç®—E(InÎ»i)
     log_expect = sum(digamma((v+1)/2)-log(gamma_para[,2])) 
     
-    ### ¼ÆËãE[(¦¤x-¦Ì¦¤)^2]
+    ### è®¡ç®—E[(Î”x-Î¼Î”)^2]
     temp_three = sum(((multi_miu-c(beta,multi_miu[1:(N-1)]))-miu*(t-c(0,t[1:(N-1)])))^2/(t-c(0,t[1:(N-1)])))+sum(diag(multi_var%*%solve(P)))
     
-    ### Éú³ÉE(¦Å^2¦Ë)
+    ### ç”ŸæˆE(Îµ^2Î»)
     temp_four = matrix(data=(gamma_para[,1]/gamma_para[,2]),nrow=1)%*%(t(Y)^2-2*diag(as.vector(Y))%*%t(multi_miu)+diag(multi_var)+t(multi_miu)^2)
     
     complete_likelihood = -(N/2)*log(m^2)-1/2*sum(log(t-c(0,t[1:(N-1)])))-(1/(2*m^2))*temp_three-0.5*N*log(sigma^2)+((v+1)/2-1)*log_expect-(temp_four/(2*sigma^2))+(v*N/2)*log(v/2)-(v/2)*sum(gamma_para[,1]/gamma_para[,2])-N*log(gamma(v/2))
     history_complete_likelihood[z] = complete_likelihood
     
     
-    ##########  ¼ÆËã¶ÔÊıËÆÈ»   ###########
-    ### ¼ÆËã(E(¦Å^2)/2sigma^2+v/2)E[¦Ë]
+    ##########  è®¡ç®—å¯¹æ•°ä¼¼ç„¶   ###########
+    ### è®¡ç®—(E(Îµ^2)/2sigma^2+v/2)E[Î»]
     temp_six = matrix(data=(gamma_para[,1]/gamma_para[,2]),nrow=1)%*%((t(Y)^2-2*diag(as.vector(Y))%*%t(multi_miu)+diag(multi_var)+t(multi_miu)^2)/(2*rep(sigma^2,N))+rep(v/2,N))
 
-    ### ¼ÆËãdet(var)ËùĞèµÄ²ÎÊı
+    ### è®¡ç®—det(var)æ‰€éœ€çš„å‚æ•°
     if (b < 1){
       c = -1/N*sum(log(t-c(0,t[1:(N-1)])))
     }else if (b>1){
@@ -331,15 +331,15 @@ library(ggpubr)
     log_likelihood = -(N/2)*log(2*pi*m^2)-1/2*sum(log(t-c(0,t[1:(N-1)])))-(1/(2*m^2))*temp_three-(N/2)*log(2*pi*sigma^2)-temp_six+(N*v/2)*log(v/2)-N*log(gamma(v/2))+(v+1)/2*sum(log(gamma_para[,1]/gamma_para[,2]))-N*((v+1)/2)*log((v+1)/2)+N*log(gamma((v+1)/2))+N*(v+1)/2+N/2*log(2*pi)+(1/2)*(log(det(solve(solve(P/c)+solve(D/c)/rep((sigma^2/m^2),N))))+N*log(c*m^2))+N/2
     #View(log_likelihood)-(4*N)*log(10))
     #det(solve(solve(P/c)+solve(D/c)/rep((sigma^2/m^2),N)))
-    ### ¼ÆËãÓÃv_alterµÄ¶ÔÊıËÆÈ»
+    ### è®¡ç®—ç”¨v_alterçš„å¯¹æ•°ä¼¼ç„¶
     #log_likelihood_test = -(100/2)*log(2*pi*m^2)-1/2*sum(log(t-c(0,t[1:99])))-(1/(2*m^2))*temp_three-(100/2)*log(2*pi*sigma^2)-temp_six+(100*v_alter/2)*log(v_alter/2)-100*log(gamma(v_alter/2))+(v_alter+1)/2*sum(log(q_lambda_expect))-100*((v_alter+1)/2)*log((v_alter+1)/2)+100*log(gamma((v_alter+1)/2))+100*(v_alter+1)/2+100/2*log(2*pi)+(1/2)*log(det(multi_var))+(1/2*100)
     history_log_likelihood[z] = log_likelihood
     
     
-    ##########  ¸üĞÂÊ±¼ä³ß¶È²ÎÊıb   ###########
+    ##########  æ›´æ–°æ—¶é—´å°ºåº¦å‚æ•°b   ###########
     function(){
       solve_b = function(b_test){
-        # ¼ÆËã¦¤lambda`
+        # è®¡ç®—Î”lambda`
         lambda_deriv = rep(NA,N)
         t_test = seq(1,N)^b_test
         for (i in 1:N){
@@ -350,7 +350,7 @@ library(ggpubr)
           }
         }
         
-        # ¼ÆËãP/b
+        # è®¡ç®—P/b
         P_deriv = matrix(data = 0, nrow = N,ncol = N)
         for (i in 1:N){
           if (i == 1){
@@ -370,12 +370,12 @@ library(ggpubr)
       }
       b = uniroot(solve_b,interval = c(1,3),extendInt="yes")$root
       
-      ### ¸üĞÂÊ±¼äµã
+      ### æ›´æ–°æ—¶é—´ç‚¹
       t=seq(1,N)^b
       
-      ### ¸üĞÂ¾ØÕóP
+      ### æ›´æ–°çŸ©é˜µP
       P = matrix(data = NA,ncol=N,nrow=N)
-      for (i in 1:N){ #Éú³É¾ØÕóP0
+      for (i in 1:N){ #ç”ŸæˆçŸ©é˜µP0
         for (j in 1:N){
           if (i<j){
             P[i,j]=i^b
@@ -386,37 +386,37 @@ library(ggpubr)
         }
       }
       
-      ### ¸üĞÂmulti_miu,multi_var
-      multi_var = solve(solve(D)/rep((sigma^2),N)+(solve(P)/(m^2)))#¼ÆËã¶àÔª¸ßË¹·½²î¾ØÕó
-      multi_miu = miu*t+(Y-miu*t)%*%(solve(D)/rep((sigma^2),N))%*%multi_var #¼ÆËã¶àÔª¸ßË¹¾ùÖµ
+      ### æ›´æ–°multi_miu,multi_var
+      multi_var = solve(solve(D)/rep((sigma^2),N)+(solve(P)/(m^2)))#è®¡ç®—å¤šå…ƒé«˜æ–¯æ–¹å·®çŸ©é˜µ
+      multi_miu = miu*t+(Y-miu*t)%*%(solve(D)/rep((sigma^2),N))%*%multi_var #è®¡ç®—å¤šå…ƒé«˜æ–¯å‡å€¼
       history_b[z] = b
     }
     
       
     
     
-    #### ÕâÀïÊ¹ÓÃpower-law time scale t^b
+    #### è¿™é‡Œä½¿ç”¨power-law time scale t^b
     function(){
       solve_b_test = function(b_test){
         t_test = (b_test[1]*b_test[2]*seq(2,2*N,2))^(b_test[2]-1)
-        ### ¼ÆËãµÚÒ»Ïî
+        ### è®¡ç®—ç¬¬ä¸€é¡¹
         temp_five = multi_miu^2+c(beta,multi_miu[1:(N-1)])^2-2*multi_miu*c(beta,multi_miu[1:(N-1)])
         term_one = sum(temp_five/(t_test-c(0,t_test[1:(N-1)])))
-        ### ¼ÆËãµÚ¶şÏî
+        ### è®¡ç®—ç¬¬äºŒé¡¹
         temp_six = diag(multi_var)+c(0,diag(multi_var)[1:(N-1)])-2*c(0,diag(multi_var[-nrow(multi_var),-1]))
         term_two = sum(temp_six/(t_test-c(0,t_test[1:(N-1)])))
         return(-(-1/2*sum(log(t_test-c(0,t_test[1:(N-1)])))-1/(2*m^2)*miu^2*t_test[N]-1/(2*m^2)*(term_one+term_two)))
       }
-      #optimize(solve_b_test,c(0.1,3),maximum = TRUE)$maximum
+      b = optimize(solve_b_power,c(0.001,1),maximum = TRUE)$maximum
       b_odd = b
       b = optim(c(b_odd[1],b_odd[2]),solve_b_test)$par
       
-      ### ¸üĞÂÊ±¼äµã
+      ### æ›´æ–°æ—¶é—´ç‚¹
       t=(b[1]*b[2]*seq(2,2*N,2))^(b[2]-1)
       
-      ### ¸üĞÂ¾ØÕóP
+      ### æ›´æ–°çŸ©é˜µP
       P = matrix(data = NA,ncol=N,nrow=N)
-      for (i in 1:N){ #Éú³É¾ØÕóP0
+      for (i in 1:N){ #ç”ŸæˆçŸ©é˜µP0
         for (j in 1:N){
           if (i<j){
             P[i,j]=(b[1]*b[2]*2*i)^(b[2]-1)
@@ -427,36 +427,35 @@ library(ggpubr)
         }
       }
       
-      ### ¸üĞÂmulti_miu,multi_var
-      multi_var = solve(solve(D)/rep(sigma^2,N)+(solve(P)/(m^2)))#¼ÆËã¶àÔª¸ßË¹·½²î¾ØÕó
-      multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #¼ÆËã¶àÔª¸ßË¹¾ùÖµ
+      ### æ›´æ–°multi_miu,multi_var
+      multi_var = solve(solve(D)/rep(sigma^2,N)+(solve(P)/(m^2)))#è®¡ç®—å¤šå…ƒé«˜æ–¯æ–¹å·®çŸ©é˜µ
+      multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #è®¡ç®—å¤šå…ƒé«˜æ–¯å‡å€¼
       history_b[z] = b
     }
     
-    ### ÕâÀïÊ¹ÓÃlog time scale b(exp(t)-1)
-    
-      solve_b_test = function(b_test){
+      ### è¿™é‡Œä½¿ç”¨log time scale b(exp(t)-1)
+      solve_b_log = function(b_test){
         t_test = b_test[1]*exp(b_test[2]*seq(2,2*N,2))+b_test[3]
-        ### ¼ÆËãµÚÒ»Ïî
+        ### è®¡ç®—ç¬¬ä¸€é¡¹
         temp_five = multi_miu^2+c(beta,multi_miu[1:(N-1)])^2-2*multi_miu*c(beta,multi_miu[1:(N-1)])
         term_one = sum(temp_five/(t_test-c(0,t_test[1:(N-1)])))
-        ### ¼ÆËãµÚ¶şÏî
+        ### è®¡ç®—ç¬¬äºŒé¡¹
         temp_six = diag(multi_var)+c(0,diag(multi_var)[1:(N-1)])-2*c(0,diag(multi_var[-nrow(multi_var),-1]))
         term_two = sum(temp_six/(t_test-c(0,t_test[1:(N-1)])))
         return(-(-1/2*sum(log(t_test-c(0,t_test[1:(N-1)])))-1/(2*m^2)*miu^2*t_test[N]-1/(2*m^2)*(term_one+term_two)))
       }
-      #b = optimize(solve_b_test,c(0.001,1),maximum = TRUE)$maximum
+      b = optimize(solve_b_log,c(0.001,1),maximum = TRUE)$maximum
       b_odd = b
       b = optim(c(b_odd[1],b_odd[2],b_odd[3]),solve_b_test)$par
       
       
       
-      ### ¸üĞÂÊ±¼äµã
+      ### æ›´æ–°æ—¶é—´ç‚¹
       t=b[1]*exp(b[2]*seq(2,2*N,2))+b[3]
       
-      ### ¸üĞÂ¾ØÕóP
+      ### æ›´æ–°çŸ©é˜µP
       P = matrix(data = NA,ncol=N,nrow=N)
-      for (i in 1:N){ #Éú³É¾ØÕóP0
+      for (i in 1:N){ #ç”ŸæˆçŸ©é˜µP0
         for (j in 1:N){
           if (i<j){
             P[i,j]=b[1]*exp(b[2]*2*i)+b[3]
@@ -467,17 +466,17 @@ library(ggpubr)
         }
       }
       
-      ### ¸üĞÂmulti_miu,multi_var
-      multi_var = solve(solve(D)/rep(sigma^2,N)+(solve(P)/(m^2)))#¼ÆËã¶àÔª¸ßË¹·½²î¾ØÕó
-      multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #¼ÆËã¶àÔª¸ßË¹¾ùÖµ
+      ### æ›´æ–°multi_miu,multi_var
+      multi_var = solve(solve(D)/rep(sigma^2,N)+(solve(P)/(m^2)))#è®¡ç®—å¤šå…ƒé«˜æ–¯æ–¹å·®çŸ©é˜µ
+      multi_miu = t(c(beta,rep(beta,N-1)))+miu*t+(Y-miu*t-t(c(beta,rep(beta,N-1))))%*%(solve(D)/rep((sigma^2),N))%*%multi_var #è®¡ç®—å¤šå…ƒé«˜æ–¯å‡å€¼
       history_b[z] = b
-    
-    
     
     
     
   }
   
+  
+  # è¿™é‡Œè®¡ç®—RUL
     N=1
     b=1
     S=-4
@@ -504,8 +503,8 @@ library(ggpubr)
   }else{
     condition = 'Not converge'
   }
-  #return(list(t_multi_miu = multi_miu,t_miu = miu,t_sigma = sigma^2,t_m = m^2, t_v = v, t_b = b, x_test = x,converge = condition, iteration = z, loglike = history_log_likelihood, Y_t = Y,RUL_t = RUL))
-#}
+  return(list(t_multi_miu = multi_miu,t_miu = miu,t_sigma = sigma^2,t_m = m^2, t_v = v, t_b = b, x_test = x,converge = condition, iteration = z, loglike = history_log_likelihood, Y_t = Y,RUL_t = RUL))
+}
 
 result = t_function(1)
 result1 = Pearson_function(1)
@@ -524,51 +523,20 @@ multi_miu_t = multi_miu
 legend(x=1,y=0.13,legend=c("Observed data","Gaussian","Student-t","Laplace","Logistic","Pearson"),col=c('black',mycolor),lty = c(2,1,1,3,3,5),lwd = c(1,2,2,3,3,2),box.col = "grey",box.lwd=2,cex=1.1)
 legend(x=1.6,y=0.1295,legend=" ",col="black",pch=16,bty='n',pt.cex=1.1)
 
-########## ĞŞ¸Ä×ÖÌå
+########## ä¿®æ”¹å­—ä½“
 library(showtext)
 showtext_auto(enable=TRUE)
 font_add(family="Times New Roman",regular="C:\\Windows\\Fonts\\times.ttf")
 showtext_begin()
 windows()
-par(mar=c(4,3,4,1),mgp=c(1.8,0.6,0),family="Times New Roman")###ÕâÒ»²½ÒÔÉÏµÄ´úÂë¼´¿É
+par(mar=c(4,3,4,1),mgp=c(1.8,0.6,0),family="Times New Roman")###è¿™ä¸€æ­¥ä»¥ä¸Šçš„ä»£ç å³å¯
 View(font.files())
 font.families()
 font_paths()
 dev.off()
 showtext_end()
 
-##############  bearing_data µÄRUL ###################
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-####################### »­t·Ö²¼ºÍPearson·Ö²¼µÄ¶Ô±È #########################
-  par(mar=c(4,3,4,2),mgp=c(1.8,0.6,0))
-  plot(seq(1,N),Y,type='l',xlab = "Cycles",ylab = 'Degradation')
-  points(seq(1,168),-degradation_06,pch=16,cex=0.5)
-  legend(x=120,y=300,legend=c("Student-t","Pearson VII","Logistic","Laplace"),col=c('red','blue','brown','green'),lty = c(1,2,3,4),box.lwd = 2,box.col = "grey",lwd = c(2,2,3,2))
-  
-  
-  plot(seq(-0.05,0.05,0.0001),dpearsonVII(seq(-0.05,0.05,0.0001),df=2.2090,location=0,scale=0.00403),type='l',xlab="X",ylab="Probability",lwd = 2,lty=1,col=mycolor[2])
-  #lines(seq(-0.05,0.05,0.0001),dpearsonVII(seq(-0.05,0.05,0.0001),df=2.2090,location=0,scale=0.00727),type='l',xlab="X",ylab="Probability",lwd = 2,lty=1,col='red')
-  lines(seq(-0.05,0.05,0.0001),(1/(0.00449*sqrt(2.2090)*beta(1.7779/2,1/2))*(1+(seq(-0.05,0.05,0.0001)^2/(2.2090*0.00449^2)))^(-(1.7779+1)/2)),col=mycolor[5],lwd = 2,lty=5)
-  legend(x=0.015,y=80,legend=c("Student-t","Pearson VII"),col=c(mycolor[2],mycolor[5]),lty = c(2,2),box.lwd = 2,box.col = "grey",lwd = c(2,2))
-
-
-
-############################# »­¾­Ñé·Ö²¼Í¼ #########################
+############################# ç”»ç»éªŒåˆ†å¸ƒå›¾ #########################
 error = Y-x
 error = sort(error)
 min(error)
@@ -582,9 +550,7 @@ legend(x=200,y=0.4,legend=c("Empirical CDF","Student-t"),col=c("black",mycolor[2
 
 
 
-
-
-############################# »­ËÄÕÅ¾­Ñé·Ö²¼Í¼ #########################
+############################# ç”»å››å¼ ç»éªŒåˆ†å¸ƒå›¾ #########################
 error = Y-x
 error = sort(error)
 min(error)
@@ -596,9 +562,7 @@ par(mfrow = c(2,2),mar=c(2,2,2,1))
 
 
 
-
-
-############################# »­Â·¾¶ÉÏÎó²î·Ö²¼Í¼ #########################
+############################# ç”»è·¯å¾„ä¸Šè¯¯å·®åˆ†å¸ƒå›¾ #########################
 mycolor = c("black",rgb(213, 93, 81, maxColorValue = 255),rgb(242, 197, 73, maxColorValue = 255),rgb(112, 159, 86, maxColorValue = 255),rgb(54, 129, 193, maxColorValue = 255))
 
 sp1=spline(seq(1,200,1),abs(error_t),n=10000) 
@@ -610,10 +574,7 @@ plot(sp1,type='l',ylim = c(0,15))
 
 
 
-
-
-
-######################  ²¢ĞĞ¼ÆËã³¢ÊÔ  ########################
+######################  å¹¶è¡Œè®¡ç®—å°è¯•  ########################
 library(foreach)
 library(parallel)
 library(doParallel)
@@ -653,8 +614,8 @@ sfStop()
 
 
 
-
-### ´´½¨¼ÇÂ¼£¬µÚÒ»ÁĞÊÇt·Ö²¼£¬µÚ¶şÁĞÊÇnorm
+######################  æ¨¡æ‹Ÿç»“æœè®¡ç®—  ########################
+### åˆ›å»ºè®°å½•ï¼Œç¬¬ä¸€åˆ—æ˜¯tåˆ†å¸ƒï¼Œç¬¬äºŒåˆ—æ˜¯norm
 MSE = matrix(data = NA,nrow = 2000,ncol = 1)
 MAE = matrix(data = NA,nrow = 2000,ncol = 1)
 miu_compare = matrix(data = NA,nrow = 2000,ncol = 1)
@@ -671,7 +632,7 @@ MAE_compare = matrix(data=NA,nrow=2000,ncol=200)
 error_compare = matrix(data=NA,nrow=2000,ncol=200)
 
 
-### ¼ÆËãMAEºÍMSE
+### è®¡ç®—MAEå’ŒMSE
 for (i in 1:2000){
   MAE[i] = sum(abs(t_result[[i]][[7]]-t_result[[i]][[1]]))/200
   MSE[i] = sum(abs(t_result[[i]][[7]]-t_result[[i]][[1]])^2)/200
@@ -728,8 +689,8 @@ mean(v_compare)
 
 
 
-##########################  Êä³öÊı¾İ  ####################################
-#µÚÒ»ÁĞÊÇLaplace·Ö²¼£¬µÚ¶şÁĞÊÇÕıÌ¬·Ö²¼
+##########################  è¾“å‡ºæ•°æ®  ####################################
+#ç¬¬ä¸€åˆ—æ˜¯Laplaceåˆ†å¸ƒï¼Œç¬¬äºŒåˆ—æ˜¯æ­£æ€åˆ†å¸ƒ
 MAE_t_5_50 = MAE
 MSE_t_5_50 = MSE
 miu_t_5_50 = miu_compare
@@ -747,14 +708,11 @@ write.csv(v_t_5_50,file = "v_t_5_50.csv")
 write.csv(b_t_5_50,file = "b_t_5_50.csv")
 write.csv(iteration_t_5_50,file = "iteration_t_5_50.csv")
 
-
-
-
 write.csv(trans_bearing,file = "trans_bearing.csv")
 
 
 
-######################## »­·Ö²¼Í¼ ##########################
+######################## ç”»åˆ†å¸ƒå›¾ ##########################
 v=1
 sigma = 4
 delta = 0.5
@@ -783,46 +741,7 @@ legend(x=12.6,y=0.0375,legend="    Pearson VII",col=rgb(112,128,170,100,maxColor
 
 
 
-
-
-
-
-
-S= -4
-N=115
-######## ¼ÆËãA
-A=(miu*(seq(230.1,400,0.1)^b-(2*N)^b)*multi_var[N,N]+(S-multi_miu[N])*(m^2)*(seq(230.1,400,0.1)^b-(2*N)^b))/((m^2)*(seq(230.1,400,0.1)^b-(2*N)^b)+multi_var[N,N])
-
-B=((m^2)*(seq(230.1,400,0.1)^b-(2*N)^b)*multi_var[N,N])/((m^2)*(seq(230.1,400,0.1)^b-(2*N)^b)+multi_var[N,N])
-
-C=(b*(seq(230.1,400,0.1)^(b-1)))/(2*pi*m*sqrt(multi_var[N,N])*((seq(230.1,400,0.1)^b-(2*N)^b)^(3/2)))*exp((A^2)/(2*B)-(((miu^2)*(seq(230.1,400,0.1)^b-(2*N)^b)/(m^2))+((S-multi_miu[N])^2/multi_var[N,N]))/2)
-
-#C=(b*((seq(150,400,0.1)-100)^(b-1)))/(2*pi*m*multi_var[50,50]*(((seq(150,400,0.1)-100)^b)^(3/2)))*exp(-((S-miu*((seq(150,400,0.1)-100)^b)-multi_miu[50])^2/(2*((m^2)*((seq(150,400,0.1)-100)^b)+multi_var[50,50]))))
-
-
-
-phi = rep(NA,1700)
-for(i in 1:1700){
-  phi[i] = sum(dnorm(seq(-100,((A/sqrt(B))[i]),0.01),mean=0,sd=1))*0.01
-}
-View(phi)
-
-plot(seq(230.1,400,0.1),C*(B*exp(-((A^2)/(2*B)))+sqrt(2*pi*B)*A*(phi)),ylab='Density',xlab='Time Points)',col=mycolor[2],type='l',lwd=2)
-
-
-
-
-
-RUL_compare = rep(NA,105)
-for (i in 25:105){
-  RUL_compare[i] = t_function(i)[[12]]$value
-  
-}
-warnings()
-
-
-
-################ ÓÃ»Ø¹é¼ÆËã #####################
+################ ç”¨å›å½’ç²—ç•¥ä¼°è®¡å‚æ•° #####################
 regression_b = (t(trans_bearing-mean(trans_bearing))%*%(seq(2,2*126,2)-mean(seq(2,2*126,2))))/sum((seq(2,2*126,2)-mean(seq(2,2*126,2)))^2)
 
 regression_a = mean(trans_bearing)-mean(seq(2,2*126,2))*regression_b
