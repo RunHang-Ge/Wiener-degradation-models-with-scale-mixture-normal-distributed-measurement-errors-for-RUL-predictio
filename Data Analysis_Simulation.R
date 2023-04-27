@@ -1,167 +1,167 @@
 library(readxl)
 library(ggplot2)
 library(ggpubr)
-########################   µº»Î ˝æ›   #################################
-MAE_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/MAE_Laplace_5_20.csv")[,-1]
-miu_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/miu_laplace_5_20.csv")[,-1]
-sigma_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/sigma_square_laplace_5_20.csv")[,-1]
-m_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/m_square_laplace_5_20.csv")[,-1]
-MAE_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/MAE_Laplace_5_50.csv")[,-1]
-miu_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/miu_laplace_5_50.csv")[,-1]
-sigma_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/sigma_square_laplace_5_50.csv")[,-1]
-m_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/m_square_laplace_5_50.csv")[,-1]
-MAE_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/MAE_Laplace_10_20.csv")[,-1]*300/200
-miu_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/miu_laplace_10_20.csv")[,-1]
-sigma_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/sigma_square_laplace_10_20.csv")[,-1]
-m_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/m_square_laplace_10_20.csv")[,-1]
-MAE_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/MAE_Laplace_10_50.csv")[,-1]*300/200
-miu_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/miu_laplace_10_50.csv")[,-1]
-sigma_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/sigma_square_laplace_10_50.csv")[,-1]
-m_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/m_square_laplace_10_50.csv")[,-1]
-MAE_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/MAE_Laplace_20_20.csv")[,-1]
-miu_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/miu_laplace_20_20.csv")[,-1]
-sigma_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/sigma_square_laplace_20_20.csv")[,-1]
-m_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/m_square_laplace_20_20.csv")[,-1]
-MAE_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/MAE_Laplace_20_50.csv")[,-1]*300/200
-miu_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/miu_laplace_20_50.csv")[,-1]
-sigma_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/sigma_square_laplace_20_50.csv")[,-1]
-m_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/m_square_laplace_20_50.csv")[,-1]
+########################   ÂØºÂÖ•Êï∞ÊçÆ   #################################
+MAE_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/MAE_Laplace_5_20.csv")[,-1]
+miu_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/miu_laplace_5_20.csv")[,-1]
+sigma_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/sigma_square_laplace_5_20.csv")[,-1]
+m_laplace_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/m_square_laplace_5_20.csv")[,-1]
+MAE_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/MAE_Laplace_5_50.csv")[,-1]
+miu_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/miu_laplace_5_50.csv")[,-1]
+sigma_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/sigma_square_laplace_5_50.csv")[,-1]
+m_laplace_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/m_square_laplace_5_50.csv")[,-1]
+MAE_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/MAE_Laplace_10_20.csv")[,-1]*300/200
+miu_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/miu_laplace_10_20.csv")[,-1]
+sigma_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/sigma_square_laplace_10_20.csv")[,-1]
+m_laplace_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/m_square_laplace_10_20.csv")[,-1]
+MAE_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/MAE_Laplace_10_50.csv")[,-1]*300/200
+miu_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/miu_laplace_10_50.csv")[,-1]
+sigma_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/sigma_square_laplace_10_50.csv")[,-1]
+m_laplace_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/m_square_laplace_10_50.csv")[,-1]
+MAE_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/MAE_Laplace_20_20.csv")[,-1]
+miu_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/miu_laplace_20_20.csv")[,-1]
+sigma_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/sigma_square_laplace_20_20.csv")[,-1]
+m_laplace_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/m_square_laplace_20_20.csv")[,-1]
+MAE_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/MAE_Laplace_20_50.csv")[,-1]*300/200
+miu_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/miu_laplace_20_50.csv")[,-1]
+sigma_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/sigma_square_laplace_20_50.csv")[,-1]
+m_laplace_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/m_square_laplace_20_50.csv")[,-1]
 
-MAE_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/MAE_logistic_5_20.csv")[,-1]
-miu_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/miu_logistic_5_20.csv")[,-1]
-sigma_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/sigma_square_logistic_5_20.csv")[,-1]
-m_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/m_square_logistic_5_20.csv")[,-1]
-MAE_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/MAE_logistic_5_50.csv")[,-1]
-miu_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/miu_logistic_5_50.csv")[,-1]
-sigma_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/sigma_square_logistic_5_50.csv")[,-1]
-m_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/m_square_logistic_5_50.csv")[,-1]
-MAE_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/MAE_logistic_10_20.csv")[,-1]*300/200
-miu_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/miu_logistic_10_20.csv")[,-1]
-sigma_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/sigma_square_logistic_10_20.csv")[,-1]
-m_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/m_square_logistic_10_20.csv")[,-1]
-MAE_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/MAE_logistic_10_50.csv")[,-1]*300/200
-miu_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/miu_logistic_10_50.csv")[,-1]
-sigma_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/sigma_square_logistic_10_50.csv")[,-1]
-m_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/m_square_logistic_10_50.csv")[,-1]
-MAE_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/MAE_logistic_20_20.csv")[,-1]
-miu_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/miu_logistic_20_20.csv")[,-1]
-sigma_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/sigma_square_logistic_20_20.csv")[,-1]
-m_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/m_square_logistic_20_20.csv")[,-1]
-MAE_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/MAE_logistic_20_50.csv")[,-1]*300/200
-miu_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/miu_logistic_20_50.csv")[,-1]
-sigma_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/sigma_square_logistic_20_50.csv")[,-1]
-m_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/m_square_logistic_20_50.csv")[,-1]
+MAE_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/MAE_logistic_5_20.csv")[,-1]
+miu_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/miu_logistic_5_20.csv")[,-1]
+sigma_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/sigma_square_logistic_5_20.csv")[,-1]
+m_logistic_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/m_square_logistic_5_20.csv")[,-1]
+MAE_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/MAE_logistic_5_50.csv")[,-1]
+miu_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/miu_logistic_5_50.csv")[,-1]
+sigma_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/sigma_square_logistic_5_50.csv")[,-1]
+m_logistic_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/m_square_logistic_5_50.csv")[,-1]
+MAE_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/MAE_logistic_10_20.csv")[,-1]*300/200
+miu_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/miu_logistic_10_20.csv")[,-1]
+sigma_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/sigma_square_logistic_10_20.csv")[,-1]
+m_logistic_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/m_square_logistic_10_20.csv")[,-1]
+MAE_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/MAE_logistic_10_50.csv")[,-1]*300/200
+miu_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/miu_logistic_10_50.csv")[,-1]
+sigma_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/sigma_square_logistic_10_50.csv")[,-1]
+m_logistic_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/m_square_logistic_10_50.csv")[,-1]
+MAE_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/MAE_logistic_20_20.csv")[,-1]
+miu_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/miu_logistic_20_20.csv")[,-1]
+sigma_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/sigma_square_logistic_20_20.csv")[,-1]
+m_logistic_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/m_square_logistic_20_20.csv")[,-1]
+MAE_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/MAE_logistic_20_50.csv")[,-1]*300/200
+miu_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/miu_logistic_20_50.csv")[,-1]
+sigma_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/sigma_square_logistic_20_50.csv")[,-1]
+m_logistic_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/m_square_logistic_20_50.csv")[,-1]
 
-MAE_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/MAE_Pearson_5_20.csv")[,-1]
-miu_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/miu_Pearson_5_20.csv")[,-1]
-sigma_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/sigma_square_Pearson_5_20.csv")[,-1]
-m_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/m_square_Pearson_5_20.csv")[,-1]
-MAE_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/MAE_Pearson_5_50.csv")[,-1]
-miu_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/miu_Pearson_5_50.csv")[,-1]
-sigma_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/sigma_square_Pearson_5_50.csv")[,-1]
-m_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/m_square_Pearson_5_50.csv")[,-1]
-MAE_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/MAE_Pearson_10_20.csv")[,-1]*300/200
-miu_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/miu_Pearson_10_20.csv")[,-1]
-sigma_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/sigma_square_Pearson_10_20.csv")[,-1]
-m_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/m_square_Pearson_10_20.csv")[,-1]
-MAE_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/MAE_Pearson_10_50.csv")[,-1]*300/200
-miu_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/miu_Pearson_10_50.csv")[,-1]
-sigma_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/sigma_square_Pearson_10_50.csv")[,-1]
-m_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/m_square_Pearson_10_50.csv")[,-1]
-MAE_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/MAE_Pearson_20_20.csv")[,-1]
-miu_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/miu_Pearson_20_20.csv")[,-1]
-sigma_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/sigma_square_Pearson_20_20.csv")[,-1]
-m_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/m_square_Pearson_20_20.csv")[,-1]
-MAE_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/MAE_Pearson_20_50.csv")[,-1]*300/200
-miu_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/miu_Pearson_20_50.csv")[,-1]
-sigma_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/sigma_square_Pearson_20_50.csv")[,-1]
-m_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/m_square_Pearson_20_50.csv")[,-1]
+MAE_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/MAE_Pearson_5_20.csv")[,-1]
+miu_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/miu_Pearson_5_20.csv")[,-1]
+sigma_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/sigma_square_Pearson_5_20.csv")[,-1]
+m_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/m_square_Pearson_5_20.csv")[,-1]
+MAE_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/MAE_Pearson_5_50.csv")[,-1]
+miu_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/miu_Pearson_5_50.csv")[,-1]
+sigma_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/sigma_square_Pearson_5_50.csv")[,-1]
+m_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/m_square_Pearson_5_50.csv")[,-1]
+MAE_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/MAE_Pearson_10_20.csv")[,-1]*300/200
+miu_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/miu_Pearson_10_20.csv")[,-1]
+sigma_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/sigma_square_Pearson_10_20.csv")[,-1]
+m_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/m_square_Pearson_10_20.csv")[,-1]
+MAE_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/MAE_Pearson_10_50.csv")[,-1]*300/200
+miu_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/miu_Pearson_10_50.csv")[,-1]
+sigma_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/sigma_square_Pearson_10_50.csv")[,-1]
+m_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/m_square_Pearson_10_50.csv")[,-1]
+MAE_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/MAE_Pearson_20_20.csv")[,-1]
+miu_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/miu_Pearson_20_20.csv")[,-1]
+sigma_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/sigma_square_Pearson_20_20.csv")[,-1]
+m_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/m_square_Pearson_20_20.csv")[,-1]
+MAE_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/MAE_Pearson_20_50.csv")[,-1]*300/200
+miu_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/miu_Pearson_20_50.csv")[,-1]
+sigma_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/sigma_square_Pearson_20_50.csv")[,-1]
+m_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/m_square_Pearson_20_50.csv")[,-1]
 mean(sigma_Pearson_10_20)
 
-MAE_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/MAE_t_5_20.csv")[,-1]
-miu_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/miu_t_5_20.csv")[,-1]
-sigma_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/sigma_square_t_5_20.csv")[,-1]
-m_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/m_square_t_5_20.csv")[,-1]
-MAE_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/MAE_t_5_50.csv")[,-1]
-miu_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/miu_t_5_50.csv")[,-1]
-sigma_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/sigma_square_t_5_50.csv")[,-1]
-m_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/m_square_t_5_50.csv")[,-1]
-MAE_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/MAE_t_10_20.csv")[,-1]*300/200
-miu_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/miu_t_10_20.csv")[,-1]
-sigma_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/sigma_square_t_10_20.csv")[,-1]
-m_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/m_square_t_10_20.csv")[,-1]
-MAE_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/MAE_t_10_50.csv")[,-1]*300/200
-miu_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/miu_t_10_50.csv")[,-1]
-sigma_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/sigma_square_t_10_50.csv")[,-1]
-m_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/m_square_t_10_50.csv")[,-1]
-MAE_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/MAE_t_20_20.csv")[,-1]
-miu_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/miu_t_20_20.csv")[,-1]
-sigma_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/sigma_square_t_20_20.csv")[,-1]
-m_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/m_square_t_20_20.csv")[,-1]
-MAE_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/MAE_t_20_50.csv")[,-1]*300/200
-miu_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/miu_t_20_50.csv")[,-1]
-sigma_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/sigma_square_t_20_50.csv")[,-1]
-m_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/m_square_t_20_50.csv")[,-1]
+MAE_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/MAE_t_5_20.csv")[,-1]
+miu_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/miu_t_5_20.csv")[,-1]
+sigma_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/sigma_square_t_5_20.csv")[,-1]
+m_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/m_square_t_5_20.csv")[,-1]
+MAE_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/MAE_t_5_50.csv")[,-1]
+miu_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/miu_t_5_50.csv")[,-1]
+sigma_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/sigma_square_t_5_50.csv")[,-1]
+m_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/m_square_t_5_50.csv")[,-1]
+MAE_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/MAE_t_10_20.csv")[,-1]*300/200
+miu_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/miu_t_10_20.csv")[,-1]
+sigma_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/sigma_square_t_10_20.csv")[,-1]
+m_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/m_square_t_10_20.csv")[,-1]
+MAE_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/MAE_t_10_50.csv")[,-1]*300/200
+miu_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/miu_t_10_50.csv")[,-1]
+sigma_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/sigma_square_t_10_50.csv")[,-1]
+m_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/m_square_t_10_50.csv")[,-1]
+MAE_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/MAE_t_20_20.csv")[,-1]
+miu_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/miu_t_20_20.csv")[,-1]
+sigma_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/sigma_square_t_20_20.csv")[,-1]
+m_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/m_square_t_20_20.csv")[,-1]
+MAE_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/MAE_t_20_50.csv")[,-1]*300/200
+miu_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/miu_t_20_50.csv")[,-1]
+sigma_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/sigma_square_t_20_50.csv")[,-1]
+m_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/m_square_t_20_50.csv")[,-1]
 
-MAE_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/MAE_norm_5_20.csv")[,-1]
-miu_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/miu_norm_5_20.csv")[,-1]
-sigma_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/sigma_square_norm_5_20.csv")[,-1]
-m_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/m_square_norm_5_20.csv")[,-1]
-MAE_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/MAE_norm_5_50.csv")[,-1]
-miu_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/miu_norm_5_50.csv")[,-1]
-sigma_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/sigma_square_norm_5_50.csv")[,-1]
-m_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/m_square_norm_5_50.csv")[,-1]
-MAE_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/MAE_norm_10_20.csv")[,-1]*300/200
-miu_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/miu_norm_10_20.csv")[,-1]
-sigma_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/sigma_square_norm_10_20.csv")[,-1]
-m_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/m_square_norm_10_20.csv")[,-1]
-MAE_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/MAE_norm_10_50.csv")[,-1]*300/200
-miu_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/miu_norm_10_50.csv")[,-1]
-sigma_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/sigma_square_norm_10_50.csv")[,-1]
-m_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/m_square_norm_10_50.csv")[,-1]
-MAE_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/MAE_norm_20_20.csv")[,-1]
-miu_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/miu_norm_20_20.csv")[,-1]
-sigma_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/sigma_square_norm_20_20.csv")[,-1]
-m_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/m_square_norm_20_20.csv")[,-1]
-MAE_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/MAE_norm_20_50.csv")[,-1]*300/200
-miu_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/miu_norm_20_50.csv")[,-1]
-sigma_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/sigma_square_norm_20_50.csv")[,-1]
-m_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/m_square_norm_20_50.csv")[,-1]
+MAE_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/MAE_norm_5_20.csv")[,-1]
+miu_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/miu_norm_5_20.csv")[,-1]
+sigma_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/sigma_square_norm_5_20.csv")[,-1]
+m_norm_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/m_square_norm_5_20.csv")[,-1]
+MAE_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/MAE_norm_5_50.csv")[,-1]
+miu_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/miu_norm_5_50.csv")[,-1]
+sigma_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/sigma_square_norm_5_50.csv")[,-1]
+m_norm_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/m_square_norm_5_50.csv")[,-1]
+MAE_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/MAE_norm_10_20.csv")[,-1]*300/200
+miu_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/miu_norm_10_20.csv")[,-1]
+sigma_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/sigma_square_norm_10_20.csv")[,-1]
+m_norm_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/m_square_norm_10_20.csv")[,-1]
+MAE_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/MAE_norm_10_50.csv")[,-1]*300/200
+miu_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/miu_norm_10_50.csv")[,-1]
+sigma_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/sigma_square_norm_10_50.csv")[,-1]
+m_norm_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/m_square_norm_10_50.csv")[,-1]
+MAE_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/MAE_norm_20_20.csv")[,-1]
+miu_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/miu_norm_20_20.csv")[,-1]
+sigma_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/sigma_square_norm_20_20.csv")[,-1]
+m_norm_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/m_square_norm_20_20.csv")[,-1]
+MAE_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/MAE_norm_20_50.csv")[,-1]*300/200
+miu_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/miu_norm_20_50.csv")[,-1]
+sigma_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/sigma_square_norm_20_50.csv")[,-1]
+m_norm_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/m_square_norm_20_50.csv")[,-1]
 
-v_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/v_t_5_20.csv")[,-1]
-v_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/v_t_5_50.csv")[,-1]
-v_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/v_t_10_20.csv")[,-1]
-v_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/v_t_10_50.csv")[,-1]
-v_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/v_t_20_20.csv")[,-1]
-v_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/v_t_20_50.csv")[,-1]
+v_t_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/v_t_5_20.csv")[,-1]
+v_t_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/v_t_5_50.csv")[,-1]
+v_t_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/v_t_10_20.csv")[,-1]
+v_t_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/v_t_10_50.csv")[,-1]
+v_t_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/v_t_20_20.csv")[,-1]
+v_t_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/v_t_20_50.csv")[,-1]
 
-v_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/v_Pearson_5_20.csv")[,-1]
-v_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/v_Pearson_5_50.csv")[,-1]
-v_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/v_Pearson_10_20.csv")[,-1]
-v_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/v_Pearson_10_50.csv")[,-1]
-v_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/v_Pearson_20_20.csv")[,-1]
-v_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/v_Pearson_20_50.csv")[,-1]
+v_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/v_Pearson_5_20.csv")[,-1]
+v_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/v_Pearson_5_50.csv")[,-1]
+v_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/v_Pearson_10_20.csv")[,-1]
+v_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/v_Pearson_10_50.csv")[,-1]
+v_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/v_Pearson_20_20.csv")[,-1]
+v_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/v_Pearson_20_50.csv")[,-1]
 
-delta_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_20/delta_Pearson_5_20.csv")[,-1]
-delta_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 5_50/delta_Pearson_5_50.csv")[,-1]
-delta_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_20/delta_Pearson_10_20.csv")[,-1]
-delta_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 10_50/delta_Pearson_10_50.csv")[,-1]
-delta_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_20/delta_Pearson_20_20.csv")[,-1]
-delta_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN¥˙¬Î/Outlier/outlier 20_50/delta_Pearson_20_50.csv")[,-1]
+delta_Pearson_5_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_20/delta_Pearson_5_20.csv")[,-1]
+delta_Pearson_5_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 5_50/delta_Pearson_5_50.csv")[,-1]
+delta_Pearson_10_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_20/delta_Pearson_10_20.csv")[,-1]
+delta_Pearson_10_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 10_50/delta_Pearson_10_50.csv")[,-1]
+delta_Pearson_20_20 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_20/delta_Pearson_20_20.csv")[,-1]
+delta_Pearson_20_50 = read.csv("C:/Users/admin/Desktop/SMN‰ª£Á†Å/Outlier/outlier 20_50/delta_Pearson_20_50.csv")[,-1]
 
-MAE_laplace_10_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 10_80/MAE_Laplace_10_80.csv")[,-1]
-MAE_t_10_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 10_80/MAE_t_10_80.csv")[,-1]
-MAE_Pearson_10_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 10_80/MAE_Pearson_10_80.csv")[,-1]
-MAE_logistic_10_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 10_80/MAE_Logistic_10_80.csv")[,-1]
-MAE_norm_10_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 10_80/MAE_norm_10_80.csv")[,-1]
-MAE_laplace_20_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 20_80/MAE_Laplace_20_80.csv")[,-1]
-MAE_t_20_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 20_80/MAE_t_20_80.csv")[,-1]
-MAE_Pearson_20_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 20_80/MAE_Pearson_20_80.csv")[,-1]
-MAE_logistic_20_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 20_80/MAE_Logistic_20_80.csv")[,-1]
-MAE_norm_20_80 = read.csv("C:/Users/lenovo/Desktop/π§“µÕ≥º∆/Simuatioin 2 Outlier/outlier 20_80/MAE_norm_20_80.csv")[,-1]
+MAE_laplace_10_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 10_80/MAE_Laplace_10_80.csv")[,-1]
+MAE_t_10_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 10_80/MAE_t_10_80.csv")[,-1]
+MAE_Pearson_10_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 10_80/MAE_Pearson_10_80.csv")[,-1]
+MAE_logistic_10_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 10_80/MAE_Logistic_10_80.csv")[,-1]
+MAE_norm_10_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 10_80/MAE_norm_10_80.csv")[,-1]
+MAE_laplace_20_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 20_80/MAE_Laplace_20_80.csv")[,-1]
+MAE_t_20_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 20_80/MAE_t_20_80.csv")[,-1]
+MAE_Pearson_20_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 20_80/MAE_Pearson_20_80.csv")[,-1]
+MAE_logistic_20_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 20_80/MAE_Logistic_20_80.csv")[,-1]
+MAE_norm_20_80 = read.csv("C:/Users/lenovo/Desktop/Â∑•‰∏öÁªüËÆ°/Simuatioin 2 Outlier/outlier 20_80/MAE_norm_20_80.csv")[,-1]
 
 
-##################   ∑÷ŒˆSimulation 2 MAE   ##########################
+##################   ÂàÜÊûêSimulation 2 MAE   ##########################
 MAE_10_80 = data.frame(MAE_t = MAE_t_10_80,MAE_laplace=MAE_laplace_10_80,MAE_logistic = MAE_logistic_10_80,MAE_Pearson=MAE_Pearson_10_80,MAE_norm = MAE_norm_10_80)
 t_sort = rep(-1,2000)
 t_sort[which(MAE_t_10_20>=2.6)] = MAE_t_10_20[which(MAE_t_10_20>=2.6)]
@@ -237,8 +237,8 @@ MAE_20_50$norm_sort = norm_sort
 
 
 
-############################   ª≠π¿º∆MAEÕº≤ø∑÷   ##########################
-## Œ™ ≤√¥aes÷–µƒ—’…´”Î÷±Ω”…Ë÷√≤ª“ª—˘£∫https://www.it1352.com/794121.html
+############################   Áîª‰º∞ËÆ°MAEÂõæÈÉ®ÂàÜ   ##########################
+## ‰∏∫‰ªÄ‰πàaes‰∏≠ÁöÑÈ¢úËâ≤‰∏éÁõ¥Êé•ËÆæÁΩÆ‰∏ç‰∏ÄÊ†∑Ôºöhttps://www.it1352.com/794121.html
 
 mycolor = c("black",rgb(213, 93, 81, maxColorValue = 255),rgb(242, 197, 73, maxColorValue = 255),rgb(112, 159, 86, maxColorValue = 255),rgb(54, 129, 193, maxColorValue = 255))
 
@@ -395,7 +395,7 @@ ggarrange(one,two,three,four,widths = c(2,2),ncol=2,nrow = 2)
 
 
 
-#####################   ª≠≤Œ ˝MAE≤ø∑÷  (Œƒ÷–√ª”√) ################################
+#####################   ÁîªÂèÇÊï∞MAEÈÉ®ÂàÜ  (Êñá‰∏≠Ê≤°Áî®) ################################
 miu_t = data.frame(miu_t_5_20,miu_t_5_50,miu_t_10_20,miu_t_10_50,miu_t_20_20,miu_t_20_50)
 miu_laplace = data.frame(miu_laplace_5_20,miu_laplace_5_50,miu_laplace_10_20,miu_laplace_10_50,miu_laplace_20_20,miu_laplace_20_50)
 miu_logistic = data.frame(miu_logistic_5_20,miu_logistic_5_50,miu_logistic_10_20,miu_logistic_10_50,miu_logistic_20_20,miu_logistic_20_50)
@@ -416,8 +416,8 @@ m_norm = data.frame(m_norm_5_20,m_norm_5_50,m_norm_10_20,m_norm_10_50,m_norm_20_
 
 
 par(mar=c(4,3,4,2),mgp=c(1.8,0.6,0))
-plot(seq(1,4),abs(c(mean((miu_t[,3]-3)),mean((miu_t[,4]-3)),mean((miu_t[,5]-3)),mean((miu_t[,6]-3)))),type = 'l',ylab = "MAE of ¶Ã",ylim=c(0,0.03),xaxt="n",xlab=NA,col=mycolor[2],lwd=2)
-axis(1,labels=c("z=10,¶Œ=20","z=10,¶Œ=50","z=20,¶Œ=20","z=20,¶Œ=50"),at=seq(1,4),las=1)
+plot(seq(1,4),abs(c(mean((miu_t[,3]-3)),mean((miu_t[,4]-3)),mean((miu_t[,5]-3)),mean((miu_t[,6]-3)))),type = 'l',ylab = "MAE of Œº",ylim=c(0,0.03),xaxt="n",xlab=NA,col=mycolor[2],lwd=2)
+axis(1,labels=c("z=10,Œæ=20","z=10,Œæ=50","z=20,Œæ=20","z=20,Œæ=50"),at=seq(1,4),las=1)
 points(seq(1,4),abs(c(mean((miu_t[,3]-3)),mean((miu_t[,4]-3)),mean((miu_t[,5]-3)),mean((miu_t[,6]-3)))),cex=1.2,col=mycolor[2],pch=0,lwd=2)
 lines(seq(1,4),abs(c(mean((miu_laplace[,3]-3)),mean((miu_laplace[,4]-3)),mean((miu_laplace[,5]-3)),mean((miu_laplace[,6]-3)))),col=mycolor[3],lwd=2)
 points(seq(1,4),abs(c(mean((miu_laplace[,3]-3)),mean((miu_laplace[,4]-3)),mean((miu_laplace[,5]-3)),mean((miu_laplace[,6]-3)))),col=mycolor[3],cex=1.2,pch=2,lwd=2)
@@ -438,8 +438,8 @@ lines(seq(1,6),abs(c(mean(sigma_Pearson[,1])-25,mean(sigma_Pearson[,2])-25,mean(
 lines(seq(1,6),abs(c(mean(sigma_norm[,1])-25,mean(sigma_norm[,2])-25,mean(sigma_norm[,3])-25,mean(sigma_norm[,4])-25,mean(sigma_norm[,5])-25,mean(sigma_norm[,6])-25)),col = 'red')
 
 
-plot(seq(1,4),abs(c(mean(sqrt(sigma_t[,3]))-5,mean(sqrt(sigma_t[,4]))-5,mean(sqrt(sigma_t[,5]))-5,mean(sqrt(sigma_t[,6]))-5)),type = 'l',ylim=c(0,15),ylab='MAE of ¶“',xaxt="n",xlab=NA,col=mycolor[2],lwd=2)
-axis(1,labels=c("z=10,¶Œ=20","z=10,¶Œ=50","z=20,¶Œ=20","z=20,¶Œ=50"),at=seq(1,4),las=1)
+plot(seq(1,4),abs(c(mean(sqrt(sigma_t[,3]))-5,mean(sqrt(sigma_t[,4]))-5,mean(sqrt(sigma_t[,5]))-5,mean(sqrt(sigma_t[,6]))-5)),type = 'l',ylim=c(0,15),ylab='MAE of œÉ',xaxt="n",xlab=NA,col=mycolor[2],lwd=2)
+axis(1,labels=c("z=10,Œæ=20","z=10,Œæ=50","z=20,Œæ=20","z=20,Œæ=50"),at=seq(1,4),las=1)
 points(seq(1,4),abs(c(mean(sqrt(sigma_t[,3]))-5,mean(sqrt(sigma_t[,4]))-5,mean(sqrt(sigma_t[,5]))-5,mean(sqrt(sigma_t[,6]))-5)),col=mycolor[2],lwd=2,cex=1.2,pch=0)
 lines(seq(1,4),abs(c(mean(sqrt(sigma_laplace[,3]))-5,mean(sqrt(sigma_laplace[,4]))-5,mean(sqrt(sigma_laplace[,5]))-5,mean(sqrt(sigma_laplace[,6]))-5)),lwd=2,col = mycolor[3])
 points(seq(1,4),abs(c(mean(sqrt(sigma_laplace[,3]))-5,mean(sqrt(sigma_laplace[,4]))-5,mean(sqrt(sigma_laplace[,5]))-5,mean(sqrt(sigma_laplace[,6]))-5)),cex=1.2,lwd=2,col = mycolor[3],pch=2)
@@ -461,20 +461,20 @@ lines(seq(1,6),abs(c(mean(m_norm[,1])-4,mean(m_norm[,2])-4,mean(m_norm[,3])-4,me
 
 
 
-##############################   ∑÷Œˆv∫Õdelta  (Œƒ÷–√ª”√) ##############################
+##############################   ÂàÜÊûêvÂíådelta  (Êñá‰∏≠Ê≤°Áî®) ##############################
 v_t = data.frame(v_t_5_20,v_t_5_50,v_t_10_20,v_t_10_50,v_t_20_20,v_t_20_50)
 v_Pearson = data.frame(v_Pearson_5_20,v_Pearson_5_50,v_Pearson_10_20,v_Pearson_10_50,v_Pearson_20_20,v_Pearson_20_50)
 delta_Pearson = data.frame(delta_Pearson_5_20,delta_Pearson_5_50,delta_Pearson_10_20,delta_Pearson_10_50,delta_Pearson_20_20,delta_Pearson_20_50)
 
 par(mar=c(4,3,4,2),mgp=c(1.8,0.6,0))
 plot(seq(1,4),abs(c(mean(v_t[,3]),mean(v_t[,4]),mean(v_t[,5]),mean(v_t[,6]))),type = 'l',ylab = NA,ylim=c(0,25),xaxt="n",xlab=NA,col=mycolor[2],lwd=2)
-axis(1,labels=c("z=10,¶Œ=20","z=10,¶Œ=50","z=20,¶Œ=20","z=20,¶Œ=50"),at=seq(1,4),las=1)
+axis(1,labels=c("z=10,Œæ=20","z=10,Œæ=50","z=20,Œæ=20","z=20,Œæ=50"),at=seq(1,4),las=1)
 points(seq(1,4),abs(c(mean(v_t[,3]),mean(v_t[,4]),mean(v_t[,5]),mean(v_t[,6]))),cex=1.2,col=mycolor[2],pch=0,lwd=2)
 lines(seq(1,4),abs(c(mean(v_Pearson[,3]),mean(v_Pearson[,4]),mean(v_Pearson[,5]),mean(v_Pearson[,6]))),lwd=2,col = mycolor[5])
 points(seq(1,4),abs(c(mean(v_Pearson[,3]),mean(v_Pearson[,4]),mean(v_Pearson[,5]),mean(v_Pearson[,6]))),col = mycolor[5],cex=1.2,lwd=2,pch=6)
 lines(seq(1,4),abs(c(mean(delta_Pearson[,3]),mean(delta_Pearson[,4]),mean(delta_Pearson[,5]),mean(delta_Pearson[,6]))),lwd=2,col = mycolor[5])
 points(seq(1,4),abs(c(mean(delta_Pearson[,3]),mean(delta_Pearson[,4]),mean(delta_Pearson[,5]),mean(delta_Pearson[,6]))),col = mycolor[5],cex=1.2,lwd=2,pch=25,bg = mycolor[5])
-legend(x=3,y=25,legend=c("v of Student-t","v of Pearson","¶ƒ of Pearson"),pch=c(0,6,25),pt.bg = mycolor[5],lwd=2,col=c(mycolor[2],mycolor[5],mycolor[5]),box.lwd = 2,box.col = "grey")
+legend(x=3,y=25,legend=c("v of Student-t","v of Pearson","Œ¥ of Pearson"),pch=c(0,6,25),pt.bg = mycolor[5],lwd=2,col=c(mycolor[2],mycolor[5],mycolor[5]),box.lwd = 2,box.col = "grey")
 
 
 
